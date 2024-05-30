@@ -10,20 +10,20 @@ func TestComposite(t *testing.T) {
 	file2 := &RegularFile{name: "File2"}
 	file3 := &RegularFile{name: "File3"}
 
-	folder1 := &Directory{
+	directory1 := &Directory{
 		name: "Directory1",
 	}
 
-	folder1.add(file1)
+	directory1.add(file1)
 
-	folder2 := &Directory{
+	directory2 := &Directory{
 		name: "Directory2",
 	}
-	folder2.add(file2)
-	folder2.add(file3)
-	folder2.add(folder1)
+	directory2.add(file2)
+	directory2.add(file3)
+	directory2.add(directory1)
 
-	folder2.search("rose")
+	directory2.search("rose")
 }
 
 // Abstract component
